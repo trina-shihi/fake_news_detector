@@ -4,7 +4,7 @@ import time
 import re
 
 # 🔑 Replace with your real NewsAPI key
-NEWS_API_KEY = "222349b5fe3746c49b659635e2e8425e"
+NEWS_API_KEY = "YOUR_API_KEY"
 
 def clean_text(text):
     text = text.lower()
@@ -20,7 +20,7 @@ def extract_keywords(text):
 def get_news(query):
     keywords = extract_keywords(query)
     query = " ".join(keywords)
-    url = f"https://newsapi.org/v2/everything?q={query}&apiKey={"222349b5fe3746c49b659635e2e8425e"}&pageSize=5"
+    url = f"https://newsapi.org/v2/everything?q={query}&apiKey={NEWS_API_KEY}&pageSize=5"
 
     try:
         response = requests.get(url).json()
